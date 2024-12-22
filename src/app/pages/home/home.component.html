@@ -3,7 +3,7 @@
 <mat-sidenav-container class="example-container bg-bgcolor">
         <mat-sidenav  #sidenav mode="side" class="sidebar  bg-bgcolor " [(opened)]="showFiller">
              <div class="row">
-              <div class="col-12 p-4 m-4  t-center rounder white-smoke">wether data</div>
+              <div class="col-12 p-4 m-4  t-center rounder white-smoke"   [routerLink]="'/home/chart'">wether data</div>
               <div class="col-12 p-4 m-4  t-center rounder white-smoke">exports</div>
               <div class="col-12 p-4 m-4  t-center rounder white-smoke">statics</div>
 
@@ -16,6 +16,7 @@
                   Toggle sidenav
                 </button>
               </div> -->
+              <!-- <app-chart ></app-chart> -->
               
               
             <router-outlet></router-outlet>
