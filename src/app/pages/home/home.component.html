@@ -1,0 +1,43 @@
+<app-navebar></app-navebar>
+
+<mat-sidenav-container class="example-container bg-bgcolor">
+        <mat-sidenav  #sidenav mode="side" class="sidebar  bg-bgcolor " [(opened)]="showFiller">
+             <div class="row">
+              <div class="col-12 p-4 mt-4 ml-2 mr-2 t-center rounder bg-light">wether data</div>
+              <div class="col-12 p-4 mt-4 ml-2 mr-2 t-center rounder bg-light">exports</div>
+              <div class="col-12 p-4 mt-4 ml-2 mr-2 t-center rounder bg-light">statics</div>
+
+             </div>
+        </mat-sidenav>
+    
+        <mat-sidenav-content class=" borders bg-white p-4 shadow white-smoke">
+            <!-- <div class="example-sidenav-content">
+                <button type="button" mat-button (click)="sidenav.toggle()">
+                  Toggle sidenav
+                </button>
+              </div> -->
+              
+              
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+<!-- 
+<mat-drawer-container class="example-container" autosize >
+    
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      
+        <ul>
+            <li>users</li>
+            <li>users</li>
+            <li>users</li>
+            <li>users</li>
+        </ul>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+      </button>
+    </div>
+  
+  </mat-drawer-container> -->
