@@ -5,8 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { PageNotFountComponent } from './pages/page-not-fount/page-not-fount.component';
 import { NavebarComponent } from './components/navebar/navebar.component';
 import { NgModel } from '@angular/forms';
-import { UsersComponent } from './components/users/users.component';
-import { CarsComponent } from './components/cars/cars.component';
+import { StaticsComponent } from './pages/statics/statics.component';
 // export const routes: Routes = [
 //     { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
 //     { path: 'home', component: HomeComponent },
@@ -26,8 +25,8 @@ export const routes: Routes = [
       children: [
         { path: '404', component: PageNotFountComponent },
         { path: 'nav', component: PageNotFountComponent },
-        { path: 'cars', component: CarsComponent },
-        { path: 'users', component: UsersComponent },
+        { path: 'statics', component: StaticsComponent },
+        // { path: 'users', component: UsersComponent },
       ]
      
     },

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
-import { SuccessMessageComponent } from '../../components/success-message/success-message.component';
-import { DangerMessageComponent } from '../../components/danger-message/danger-message.component';
+ 
 import { NavebarComponent } from '../../components/navebar/navebar.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -13,7 +12,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink,SuccessMessageComponent,RouterOutlet,DangerMessageComponent,NavebarComponent,MatSidenavModule, MatButtonModule
+  imports: [RouterLink,RouterOutlet,NavebarComponent,MatSidenavModule, MatButtonModule
 ,CommonModule
 
   ],

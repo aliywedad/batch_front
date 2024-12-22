@@ -17,8 +17,10 @@ body {
     background-color: #8fe3f2;
 }
 .white-smoke{
-    background-color: whitesmoke;
+    background-color: #EFF2F9;
 }
 .t-center{
     text-align: center;
+    border-radius: 10px;
+    border: 1px solid  rgba(108, 106, 106, 0.5);
 }
