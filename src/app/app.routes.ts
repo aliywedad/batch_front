@@ -7,6 +7,7 @@ import { NavebarComponent } from './components/navebar/navebar.component';
 import { NgModel } from '@angular/forms';
 import { StaticsComponent } from './pages/statics/statics.component';
 import { ChartComponent } from './components/chart/chart.component';
+import { WeatherComponent } from './pages/weather/weather.component';
 // export const routes: Routes = [
 //     { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
 //     { path: 'home', component: HomeComponent },
@@ -28,6 +29,7 @@ export const routes: Routes = [
         { path: 'nav', component: PageNotFountComponent },
         { path: 'statics', component: StaticsComponent },
         { path: 'chart', component: ChartComponent },
+        { path: 'weather', component: WeatherComponent },
         // { path: 'users', component: UsersComponent },
       ]
      

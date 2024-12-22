@@ -11,7 +11,7 @@
 }
 html, body { height: 100%; }
 body {
-    background-color: #8fe3f2;
+    /* background-color: #8fe3f2; */
     margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .bg-bgcolor{
     background-color: #8fe3f2;

@@ -1,0 +1,59 @@
+<h1>Weather Data</h1>
+<div class="row">
+    <div class="col-4 flex">
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            <option *ngFor="let region of regtions" value="region.viewValue">{{region.viewValue}}</option>
+            <!-- <option value="2">Two</option>
+            <option value="3">Three</option> -->
+          </select>
+          
+
+    </div>
+    <div class="col-4 flex">
+
+        <button type="button" class="btn btn-primary" data-mdb-ripple-init>
+            <!-- <i class="fas fa-search"></i> -->
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+    </div>
+</div>
+<div class="weather-container">
+
+
+  <div class="weather-card" *ngFor="let weather of dataList">
+    <div class="weather-header">
+      <h2>{{ weather.datetime }}</h2>
+      <p>{{ weather.weather.description }}</p>
+    </div>
+    <div class="weather-body">
+      <div class="weather-detail">
+        <span><i class="fas fa-temperature-high"></i> Temp:</span>
+        <span>{{ weather.temp }} °F</span>
+      </div>
+      <div class="weather-detail">
+        <span><i class="fas fa-wind"></i> Wind Speed:</span>
+        <span>{{ weather.wind_spd }} mph ({{ weather.wind_cdir_full }})</span>
+      </div>
+      <div class="weather-detail">
+        <span><i class="fas fa-tint"></i> Humidity:</span>
+        <span>{{ weather.rh }}%</span>
+      </div>
+      <div class="weather-detail">
+        <span><i class="fas fa-sun"></i> UV Index:</span>
+        <span>{{ weather.uv }}</span>
+      </div>
+      <div class="weather-detail">
+        <span><i class="fas fa-cloud"></i> Cloud Cover:</span>
+        <span>{{ weather.clouds }}%</span>
+      </div>
+      <div class="weather-detail">
+        <span><i class="fas fa-snowflake"></i> Snow:</span>
+        <span>{{ weather.snow }} inches</span>
+      </div>
+    </div>
+    <div class="weather-footer">
+      <button>More Info</button>
+    </div>
+  </div>
+</div>
