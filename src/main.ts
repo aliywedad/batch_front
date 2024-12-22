@@ -6,6 +6,7 @@ import { importProvidersFrom } from '@angular/core';
 import { HomeComponent } from './app/pages/home/home.component';
 import { PageNotFountComponent } from './app/pages/page-not-fount/page-not-fount.component';
 import { NavebarComponent } from './app/components/navebar/navebar.component';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts'
 bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
 
