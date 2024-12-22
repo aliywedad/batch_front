@@ -6,6 +6,7 @@ import { PageNotFountComponent } from './pages/page-not-fount/page-not-fount.com
 import { NavebarComponent } from './components/navebar/navebar.component';
 import { NgModel } from '@angular/forms';
 import { StaticsComponent } from './pages/statics/statics.component';
+import { ChartComponent } from './components/chart/chart.component';
 // export const routes: Routes = [
 //     { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
 //     { path: 'home', component: HomeComponent },
@@ -26,6 +27,7 @@ export const routes: Routes = [
         { path: '404', component: PageNotFountComponent },
         { path: 'nav', component: PageNotFountComponent },
         { path: 'statics', component: StaticsComponent },
+        { path: 'chart', component: ChartComponent },
         // { path: 'users', component: UsersComponent },
       ]
      
