@@ -1,53 +1,21 @@
 .navbar {
-    display: flex;
-    justify-content: space-between; /* Aligne les éléments à gauche et à droite */
-    align-items: center;
-    padding: 0 20px; /* Ajoute un espace interne des deux côtés */
-    
-  }
+  padding: 6px 6px;
   
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-brand img {
-    max-height: 40px; /* Ajustez la taille du logo */
+}
 
-  }
-  
-  .navbar-nav {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    color: #333; /* Couleur du texte */
-    
-    right: 0; /* Espace entre les liens */
-  }
-  
-  .nav-link:hover {
-    color: #007bff; /* Couleur au survol */
-  }
-  
-  /* Ajout d'une flexibilité pour les petits écrans */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column; /* Les éléments s'empilent */
-    }
-  
-    .navbar-nav {
-      flex-direction: column; /* Les liens passent en colonne */
-    }
-  
-    .nav-link {
-      margin-left: 0;
-      margin-top: 10px;
-    }
-  }
-  
+.navbar-nav .nav-item {
+  margin-left: 15px;
+}
+
+.spacebetween {
+  justify-content: space-between;
+   /* Séparer le logo de l'icône */
+}
+
+.navbar-brand img {
+  height: 50px;
+}
+
+.navbar-nav .nav-item i {
+  font-size: 30px; /* Taille par défaut des icônes */
+}

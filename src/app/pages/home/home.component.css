@@ -1,26 +1,67 @@
+/* Container principal */
 .example-container {
-    width: 100%;
-    height: 100%;
-    
+  display: flex;
+  height: 100vh; /* Remplir toute la hauteur de la fenêtre */
+  background-color: #f7f7f7; /* Couleur de fond principale */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px; /* Largeur de la sidebar */
+  background-color: #ffffff; /* Fond blanc */
+  padding: 6px; /* Espacement intérieur */
+  display: flex;
+  flex-direction: column; /* Alignement vertical des éléments */
+  justify-content: flex-start; /* Commencer en haut de la sidebar */
+}
+
+/* Style pour les éléments du menu */
+.menu-item {
+  background-color: #f0f0f0; /* Fond léger pour les éléments */
+  padding: 10px;
+  margin-bottom: 20px; /* Espacement entre les éléments */
+  text-align: center;
+  border-radius: 6px; /* Coins arrondis */
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out; /* Animation au survol */
+  width: 100%; /* Prend toute la largeur de la sidebar */
+}
+
+/* Changement de couleur au survol des éléments du menu */
+.menu-item:hover {
+  background-color: #18af2a; /* Couleur au survol */
+  color: white; /* Texte blanc */
+}
+.menu-item.icon:hover {
+  color: white; /* Texte blanc */
+}
+
+/* Contenu principal */
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff; /* Fond blanc pour le contenu principal */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre interne */
+  margin-left: 10px; /* Espacement entre la sidebar et le contenu */
+}
+
+/* Responsive - Adaptation pour les petits écrans */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* La sidebar occupe toute la largeur sur mobile */
+    height: auto;
+    padding: 15px;
   }
-  .borders{
-    border: 3px solid rgba(108, 106, 106, 0.5);
-    border-radius: 20px;
+
+  .menu-item {
+    font-size: 1rem; /* Taille de texte plus petite */
+    padding: 10px; /* Réduire le padding sur mobile */
+    margin-bottom: 8px; /* Réduire l'espacement entre les éléments */
   }
-  .example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+
+  .content {
+    padding: 15px; /* Réduire le padding pour le contenu */
+    margin-left: 0; /* Supprimer l'espacement sur mobile */
   }
-  
-  .example-sidenav {
-    padding: 20px;
-  }
-  .sidebar{
-    width: 300px;
-    border: none;
-  }
-  .bg-white{
-    background-color: white;
-  }
+}
