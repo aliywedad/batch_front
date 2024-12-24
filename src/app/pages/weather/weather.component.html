@@ -1,59 +1,50 @@
 <h2>Weather Data</h2>
-<div class="row">
-    <div class="col-4 flex">
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option *ngFor="let region of regtions" value="region.viewValue">{{region.viewValue}}</option>
-            <!-- <option value="2">Two</option>
-            <option value="3">Three</option> -->
-          </select>
-          
-
-    </div>
-    <div class="col-4 flex">
-
-        <button type="button" class="btn btn-primary" data-mdb-ripple-init>
-            <!-- <i class="fas fa-search"></i> -->
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-    </div>
-</div>
-<div class="weather-container">
-
-
-  <div class="weather-card" *ngFor="let weather of dataList">
-    <div class="weather-header">
-      <h2>{{ weather.datetime }}</h2>
-      <p>{{ weather.weather.description }}</p>
-    </div>
-    <div class="weather-body">
-      <div class="weather-detail">
-        <span><i class="fas fa-temperature-high"></i> Temp:</span>
-        <span>{{ weather.temp }} °F</span>
-      </div>
-      <div class="weather-detail">
-        <span><i class="fas fa-wind"></i> Wind Speed:</span>
-        <span>{{ weather.wind_spd }} mph ({{ weather.wind_cdir_full }})</span>
-      </div>
-      <div class="weather-detail">
-        <span><i class="fas fa-tint"></i> Humidity:</span>
-        <span>{{ weather.rh }}%</span>
-      </div>
-      <div class="weather-detail">
-        <span><i class="fas fa-sun"></i> UV Index:</span>
-        <span>{{ weather.uv }}</span>
-      </div>
-      <div class="weather-detail">
-        <span><i class="fas fa-cloud"></i> Cloud Cover:</span>
-        <span>{{ weather.clouds }}%</span>
-      </div>
-      <div class="weather-detail">
-        <span><i class="fas fa-snowflake"></i> Snow:</span>
-        <span>{{ weather.snow }} inches</span>
-      </div>
-    </div>
-    <div class="weather-footer">
-      <button>More Info</button>
-    </div>
+<div class="row sticky-search">
+  <div class="col-4 flex">
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Open this select menu</option>
+      <option *ngFor="let region of regtions" value="region.viewValue">{{region.viewValue}}</option>
+    </select>
   </div>
+  <div class="col-4 flex">
+    <button type="button" class="btn btn-primary" data-mdb-ripple-init>
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
+</div>
+
+<!-- Table for displaying weather data -->
+<div class="weather-table-container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Date/Time</th>
+        <th>Description</th>
+        <th>Temp (°F)</th>
+        <th>Wind Speed (mph)</th>
+        <th>Wind Direction</th>
+        <th>Humidity (%)</th>
+        <th>UV Index</th>
+        <th>Cloud Cover (%)</th>
+        <th>Snow (inches)</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let weather of dataList">
+        <td>{{ weather.datetime }}</td>
+        <td>{{ weather.weather.description }}</td>
+        <td>{{ weather.temp }} °F</td>
+        <td>{{ weather.wind_spd }} mph</td>
+        <td>{{ weather.wind_cdir_full }}</td>
+        <td>{{ weather.rh }}%</td>
+        <td>{{ weather.uv }}</td>
+        <td>{{ weather.clouds }}%</td>
+        <td>{{ weather.snow }} inches</td>
+        <td>
+          <button class="btn btn-info"><b>More Info</b></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
