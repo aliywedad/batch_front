@@ -6,7 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { RouterOutlet } from '@angular/router';
 import { RouterLink } from '@angular/router';
-import { DataService } from '../../services/carsServices';
+import { DataService } from '../../services/DataService';
 import { CommonModule } from '@angular/common';
 import { ChartComponent } from '../../components/chart/chart.component';
 @Component({
@@ -24,7 +24,7 @@ export class HomeComponent {
   data: any[] = [];
   constructor(private dataService: DataService) {
 
-    this.data = this.dataService.getData();
+    // this.data = this.dataService.getData();
   }
   showFiller = true;
   
