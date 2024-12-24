@@ -1,17 +1,23 @@
 <h2>Weather Data</h2>
 <div class="row sticky-search">
   <div class="col-4 flex">
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Open this select menu</option>
-      <option *ngFor="let region of regtions" value="region.viewValue">{{region.viewValue}}</option>
+    <!-- Bind selectedRegion to the dropdown using ngModel -->
+    <select class="form-select" aria-label="Default select example"  (change)="logging($event)">
+      <option disabled selected>Select a region</option>
+      <option *ngFor="let region of regions" [value]="region.viewValue">{{ region.viewValue }}</option>
     </select>
   </div>
   <div class="col-4 flex">
-    <button type="button" class="btn btn-primary" data-mdb-ripple-init>
+    <!-- Button to trigger a search action, you can attach a click handler if necessary -->
+    <button type="button" (click)="loadWeatherData()" class="btn btn-primary" data-mdb-ripple-init (click)="onSearch()">
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
   </div>
 </div>
+
+<P >
+  vill : {{ selectedRegion.viewValue }}
+</P>
 
 <!-- Table for displaying weather data -->
 <div class="weather-table-container">

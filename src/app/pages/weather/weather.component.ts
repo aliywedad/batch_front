@@ -1,14 +1,25 @@
 import { CommonModule } from '@angular/common';
 import { Component,OnInit } from '@angular/core';
 import { DataService } from '../../services/DataService';
+import { FormsModule } from '@angular/forms';  // <-- Import FormsModule here
+
+
+interface Region {
+  value: string;
+  viewValue: string;
+  latitude: number;
+  longitude: number;
+  altitude: number;
+}
 
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
-  imports: [CommonModule],
+  imports: [CommonModule,FormsModule],
   standalone: true,
   styleUrls: ['./weather.component.css'],
 })
+
 export class WeatherComponent  implements OnInit{
   dataList: any = [
     {
@@ -48,20 +59,24 @@ export class WeatherComponent  implements OnInit{
         description: 'Broken clouds',
         code: 803,
       },
-    }
+    },
   ];
 
   constructor(private weatherService: DataService) {}
 
   ngOnInit(): void {
-    this.loadWeatherData();
+    // this.loadWeatherData();
   }
   loadWeatherData(): void {
     const { latitude, longitude } = this.selectedRegion;
     
     this.weatherService.getWeatherData(latitude.toString(), longitude.toString()).subscribe(
       (data) => {
-        this.dataList = data;
+        try{
+          this.dataList = data;
+
+        }catch(e){}
+        
       },
       (error) => {
         console.error('Error fetching weather data:', error);
@@ -72,54 +87,54 @@ export class WeatherComponent  implements OnInit{
 
 
 
-  regtions: any[] = [
+  regions:  Region[] = [
     {
       value: 'region1', 
       viewValue: 'Nouakchott', 
-      latitude: -15.983381, 
-      longitude: 18.120686, 
+      latitude: 18.134416, 
+      longitude:  -15.985634, 
       altitude: 5 // Altitude is approximate in meters above sea level
     },
     {
       value: 'region2', 
       viewValue: 'Nouadhibou', 
-      latitude: 20.9319, 
-      longitude: -17.0333, 
+      latitude: 20.968061, 
+      longitude: -17.034260, 
       altitude: 11
     },
     {
       value: 'region3', 
       viewValue: 'Atar', 
-      latitude: 20.5128, 
-      longitude: -13.0394, 
+      latitude: 20.503652,
+      longitude:  -13.063813, 
       altitude: 240
     },
     {
       value: 'region4', 
       viewValue: 'Kiffa', 
-      latitude: 15.6501, 
-      longitude: -11.6004, 
+      latitude: 16.618179,
+      longitude:  -11.407972, 
       altitude: 436
     },
     {
       value: 'region5', 
       viewValue: 'Kaédi', 
-      latitude: 16.1847, 
-      longitude: -14.0299, 
+      latitude: 16.168304,  
+      longitude: -13.494200, 
       altitude: 36
     },
     {
       value: 'region6', 
       viewValue: 'Zouérat', 
-      latitude: 27.0150, 
-      longitude: -12.4689, 
+      latitude: 22.735372, 
+      longitude: -12.472736 , 
       altitude: 702
     },
     {
       value: 'region7', 
       viewValue: 'Rosso', 
-      latitude: 16.5033, 
-      longitude: -15.975, 
+      latitude: 16.514981,
+      longitude:  -15.804842, 
       altitude: 20
     }
   ];
@@ -133,7 +148,30 @@ selectedRegion: {
     longitude: number;
     altitude: number;
   
-  }= this.regtions[0];
+  }
+  = this.regions[0];
+  onchangeSelectedRegion(Region: Region): void {
+    console.log(Region);
+    console.log(Region.viewValue);
+    console.log(this.selectedRegion.viewValue);
+    // this.selectedRegion = Region;
+  }
+  // onchangeSelectedRegion(): void {
+  //   // Log the selected region when selection changes
+  //   console.log('Selected region:', this.selectedRegion.viewValue);
+  // }
+  onSearch() {
+    console.log('Search button clicked with region:', this.selectedRegion);
+    // Add logic to handle search based on the selected region
+  }
+  logging(event: any) {
+    console.log(event.target.value);
+    console.log(this.selectedRegion.viewValue);
+    this.selectedRegion = this.regions.find(region => region.viewValue === event.target.value) || this.regions[0];
+    console.log(this.selectedRegion.viewValue);
 
+    // this.loadWeatherData();
+
+  }
   
 }
