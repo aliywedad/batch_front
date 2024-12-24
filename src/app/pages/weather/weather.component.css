@@ -1,80 +1,45 @@
+/* Custom CSS to adjust table cell width */
+.table {
+  width: 100%; /* Ensure the table takes up the full available width */
+  margin-top: 20px;
+}
 
+.table th, .table td {
+  text-align: center; /* Center the text horizontally */
+  vertical-align: middle; /* Vertically center the text */
+  padding: 15px; /* Add padding to make the cells more spacious */
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+}
 
-  .weather-container {
-    max-width: 1200px;
-    padding: 16px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
-  }
+.table-cell {
+  width: 10%; /* Adjust the width of each cell to make it wider */
+}
 
-  .weather-card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
+.table td button {
+  white-space: nowrap; /* Prevent button text from wrapping */
+}
 
-  .weather-header {
-    background: linear-gradient(135deg, #4caf50, #81c784);
-    color: #fff;
-    padding: 16px;
-    text-align: center;
-  }
+.btn-info{
+  font-size: 10px;
+  height: 30px;
+  text-align: center;
+  
+}
 
-  .weather-header h2 {
-    margin: 0;
-    font-size: 20px;
-  }
+.btn-info:hover{
+  background-color: rgb(10, 255, 39);
+}
 
-  .weather-body {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .weather-detail {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .weather-detail i {
-    color: #4caf50;
-    margin-right: 8px;
-  }
-
-  .weather-footer {
-    text-align: center;
-    padding: 16px;
-    background-color: #fafafa;
-  }
-
-  .weather-footer button {
-    background: #4caf50;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-
-  .weather-footer button:hover {
-    background: #388e3c;
-  }
-
-
-
-
-
-
-
-
-
+/* Make the search input sticky */
+.sticky-search {
+  position: sticky;
+  top: 0; /* Position it at the top of the viewport */
+  background-color: white; /* Set a background color to avoid transparency issues */
+  z-index: 100; /* Make sure the search bar stays on top of other content */
+  padding: 10px 0; /* Optional: add some padding to the top and bottom */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: add a small shadow for better visibility */
+  left: 0;
+}
 
 
 
