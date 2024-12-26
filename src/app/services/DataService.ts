@@ -14,10 +14,9 @@ export class DataService {
       year: 2022,
       price: 30000,
     }
-  ]; // Propriété pour stocker des données
-
-  // constructor() {}
-  private apiUrl = 'http://localhost:9090/weather'; // Replace with your backend endpoint
+  ]; 
+  private apiUrl = 'http://localhost:9090/weather';  
+  private apiUrl2 = 'http://localhost:9090/weather/csv'; 
 
   httpClient=inject(HttpClient)
 
@@ -27,6 +26,21 @@ export class DataService {
     
     ;
   } 
+  downloadWeatherData() {
+    this.httpClient.get<any>(`${this.apiUrl2}`).subscribe(
+      (response) => {
+        console.log(response);   
+      },
+      (error) => {
+        console.error('Error fetching weather data:', error);  
+      }
+    );
+  
+    console.log('API URL:', this.apiUrl2);  
+  }
+   
+
+
 
 
 //   getWeatherData(latitude: string, longitude: string) {

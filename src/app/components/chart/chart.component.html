@@ -1,7 +1,22 @@
-<div>
-    <canvasjs-chart
-    [options]="chartOptions"
-    [style.width]="'100%'"
-    [style.height]="'360px'"
-  ></canvasjs-chart>
-</div>  
+
+<div class="row sticky-search">
+  <div class="col-4 flex">
+    <!-- Bind selectedRegion to the dropdown using ngModel -->
+    <select class="form-select" aria-label="Default select example"   >
+      <option disabled selected>Select a region</option>
+      <option *ngFor="let region of regions" [value]="region.viewValue">{{ region.viewValue }}</option>
+    </select>
+  </div>
+  <div class="col-4 flex">
+    <button type="button" (click)="loadWeatherData()" class="btn btn-primary" data-mdb-ripple-init>
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
+ 
+</div>
+
+
+<div style="width: 70%; margin: 0 auto;">
+  <h2>Temperature Trends</h2>
+  <canvas id="lineChart"></canvas>
+</div>

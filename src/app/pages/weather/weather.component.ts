@@ -60,12 +60,16 @@ export class WeatherComponent  implements OnInit{
         code: 803,
       },
     },
+  
+  
+  
   ];
+  datanumber: number = this.dataList.length;
 
   constructor(private weatherService: DataService) {}
 
   ngOnInit(): void {
-    // this.loadWeatherData();
+    this.loadWeatherData();
   }
   loadWeatherData(): void {
     const { latitude, longitude } = this.selectedRegion;
@@ -74,6 +78,8 @@ export class WeatherComponent  implements OnInit{
       (data) => {
         try{
           this.dataList = data;
+          this.datanumber=this.dataList.length;
+
 
         }catch(e){}
         
@@ -165,6 +171,7 @@ selectedRegion: {
     // Add logic to handle search based on the selected region
   }
   logging(event: any) {
+    console.log(this.dataList.length);
     console.log(event.target.value);
     console.log(this.selectedRegion.viewValue);
     this.selectedRegion = this.regions.find(region => region.viewValue === event.target.value) || this.regions[0];

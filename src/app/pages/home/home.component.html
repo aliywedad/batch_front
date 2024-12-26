@@ -4,9 +4,11 @@
   <!-- Sidebar -->
   <mat-sidenav #sidenav mode="side" class="sidebar" [(opened)]="showFiller">
     <div class="menu-item" [routerLink]="'/home/weather'">Weather Data<i class="fa-solid fa-smog icon" style="margin-left: 10px; color: black;"></i></div>
-    <div class="menu-item" >Exports<i class="fa fa-file-export" style="margin-left: 57px; color: black;"></i></div>
+    <div class="menu-item"  [routerLink]="'/home/extract'" >Exports<i class="fa fa-file-export" style="margin-left: 57px; color: black;"></i></div>
     <div class="menu-item" [routerLink]="'/home/chart'">Statistics<i class="fa fa-chart-line" style="margin-left: 45px; color: black"></i></div>
   </mat-sidenav>
+  
+  
 
   <!-- Main Content -->
   <mat-sidenav-content class="content">

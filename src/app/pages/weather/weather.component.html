@@ -13,11 +13,19 @@
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
   </div>
+  <P  class="fw-light p-3 fs-3">
+    <span *ngIf="dataList?.length; else noData">
+      Report of the weather status for <span class="fw-bold">{{ selectedRegion.viewValue }} </span>over the past {{datanumber}} days.
+    </span> 
+    <ng-template #noData>No data available</ng-template>
+
+
+    
+
+  </P>
 </div>
 
-<P >
-  vill : {{ selectedRegion.viewValue }}
-</P>
+
 
 <!-- Table for displaying weather data -->
 <div class="weather-table-container">
