@@ -27,7 +27,7 @@ export const routes: Routes = [
       ]
      
     },
-    { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
+    { path: '', redirectTo: '/home/weather', pathMatch: 'full' }, // Default route
     { path: '**', component: PageNotFountComponent },
   ];
   @NgModule({
